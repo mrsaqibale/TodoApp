@@ -1,0 +1,14 @@
+body {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

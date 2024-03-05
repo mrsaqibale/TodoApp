@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block baseBlock %}
+
+<a href="{% url 'task' %}"><button type="button" class="btn btn-sm btn-outline-danger"><i class="bi bi-arrow-left"></i></button></a>
+<h4> you want to del it? {{data}}</h4>
+
+<form method='POST'>
+    {% csrf_token %}
+    <input type='submit' value='Delete' name = 'delete'>
+</form>
+
+{% endblock baseBlock %}

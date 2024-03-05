@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List Design</title>
+  {% load static %}
+  <link href="{% static '/bootstrap/css/bootstrap.min.css' %} " rel="stylesheet">
+  <link rel="stylesheet" href="{% static '/css/style_main.css' %} " >
+  <link rel="stylesheet" href="{% static '/icon/font/bootstrap-icons.min.css' %}">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+          
+          {% if request.user.is_authenticated %}
+          <strong class="text-left">User: {{request.user}}</strong>
+          <p class="text-center m-4">
+                <a href="{% url 'task' %}"><button type="button" class="btn btn-sm btn-outline-success">Home</button></a>
+                <a href="{% url 'logout' %}"><button type="button" class="btn btn-sm btn-outline-success">Logout</button></a>
+                
+                <a href="{% url 'create' %}"><button type="button" class="btn btn-sm btn-outline-success">New</button></a>
+                <a href="{% url 'completed' %}"><button type="button" class="btn btn-sm btn-outline-success">Completed</button></a>
+                <a href="{% url 'deleted' %}"><button type="button" class="btn btn-sm btn-outline-success">Deleted</button></a>
+                
+                {% else %}
+                <a href="">login</a>
+              {% endif %}
+            </p>

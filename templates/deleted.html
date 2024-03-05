@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block baseBlock %}
+
+{% for n in data %}
+<div class="todo-item">
+    <span>
+        <strong>
+            {{n.tdName |slice:":30"|title}}     
+            {% if n.tdName|length >= 30 %}
+            ...
+            {% endif %}
+        </strong>
+    </span>
+    <div>
+        {% load static %}
+        <a href="{% url 'detail' n.id%}"><button type="button" class="btn btn-sm btn-outline-success"><i class="bi bi-eye"></i></button></a>
+    </div>
+</div>
+{% endfor %}
+{% endblock baseBlock %}

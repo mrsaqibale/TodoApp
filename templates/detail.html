@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block baseBlock %}
+
+<h2>Details:</h2>
+<a href="{% url 'task' %}"><button type="button" class="btn btn-sm btn-outline-danger"><i class="bi bi-arrow-left"></i></button></a>
+
+<h5>Title:</h5>{{data.tdName}}
+<br><br>
+<h5>Description:</h5>{{data.tdDes}}
+<br><br>
+
+<h5>Status:</h5>
+{% if data.tdStatus == True %}
+<p style="color:green;">Completed</p>
+{% else %}
+<p style="color:red;">Pending</p>
+{% endif %}
+    
+
+{{data.tdStatus}}
+
+{% endblock baseBlock %}

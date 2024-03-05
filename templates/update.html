@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block baseBlock %}
+
+
+<h2> update data</h2>
+<a href="{% url 'task' %}"><button type="button" class="btn btn-sm btn-outline-danger"><i class="bi bi-arrow-left"></i></button></a>
+
+<form method='POST'>
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type='submit' value='Update'>
+</form>
+
+{% endblock baseBlock %}

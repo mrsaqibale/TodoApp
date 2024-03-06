@@ -65,6 +65,7 @@ def tbTodoDeleteView(request, delId):
             model = tbTodo.objects.get(id = delId)
             model.tdIsDeleted = True
             model.save()
+            return render(request, 'task.html', data)
     return render(request, 'delete.html', data)
 
     
